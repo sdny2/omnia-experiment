@@ -1,3 +1,5 @@
+# omnia-experiment
+Omnia experiment runner and evaluation scripts
 # AGIEval
 This repository contains information about AGIEval, data, code and output of baseline systems for the benchmark.
 
