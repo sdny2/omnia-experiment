@@ -9,9 +9,6 @@ outputs/
 logs/
 debug_payloads/
 
-# data
-data/
-
 # python cache
 __pycache__/
 *.pyc
