@@ -1,15 +1,20 @@
 # omnia-experiment
 Omnia experiment runner and evaluation scripts
-# AGIEval
+## Current Action
+To run experiments, execute the bash script below:
+```bash
+bash scripts.sh
+
+## AGIEval
 This repository contains information about AGIEval, data, code and output of baseline systems for the benchmark.
 
-# Introduction
+### Introduction
 AGIEval is a human-centric benchmark specifically designed to evaluate the general abilities of foundation models in tasks pertinent to human cognition and problem-solving. 
 This benchmark is derived from 20 official, public, and high-standard admission and qualification exams intended for general human test-takers, such as general college admission tests (e.g., Chinese College Entrance Exam (Gaokao) and American SAT), law school admission tests, math competitions, lawyer qualification tests, and national civil service exams. 
 For a full description of the benchmark, please refer to our paper: [AGIEval: A Human-Centric Benchmark for
 Evaluating Foundation Models](https://arxiv.org/pdf/2304.06364.pdf).
 
-# Tasks and Data
+### Tasks and Data
 [We have updated the dataset to version 1.1.](data/v1_1) The new version updated Chinese Gaokao (chemistry, biology, physics) datasets with questions from 2023 and addressed annotation issues. To facilitate evaluation, now all multi-choice question (MCQ) tasks have one answer only (Gaokao-Physics and JEC-QA used to have multi-label answers). AGIEval-en datasets remain the same as Verison 1.0. The new version's statistics are as follows:
 
 AGIEval v1.1 contains 20 tasks, including 18 MCQ tasks and two cloze tasks (Gaokao-Math-Cloze and MATH). You can find the full list of tasks in the table below.
@@ -34,7 +39,7 @@ The data format for all datasets is as follows:
 The `passage` field is available for gaokao-chinese, gaokao-english, both of logiqa, all of LSAT, and SAT. The answer for multi-choice tasks is saved in the `label` field. The answer for cloze tasks is saved in the `answer` field. 
 
 We provide the prompts for few-shot learning in the [data/few_shot_prompts](data/few_shot_prompts.csv) file.
-# Baseline Systems
+### Baseline Systems
 We evaluate the performance of the baseline systems (gpt-3.5-turbo and GPT-4o) on AGIEval v1.1.
 The results are as follows:
 
@@ -44,12 +49,12 @@ You can replicate the results by following the steps below:
 1. Update your OpenAI API in the [openai_api.py](openai_api.py) file.
 2. run the [run_prediction.py](run_prediction.py) script to get the results.
 
-# Evaluation
+### Evaluation
 You can run the [post_process_and_evaluation.py](post_process_and_evaluation.py) file to get the evaluation results.
 # Leaderboard
 We report the leaderboard on AGIEval v1.1. The leaderboard contains two subsets AGIEval-en and AGIEval-zh. The two subset leaderboards contain only MCQ tasks. The leaderboard is as follows:
 
-## AGIEval-en few-shot
+### AGIEval-en few-shot
 
 | Model            | Source                                                   | Average |
 |------------------|----------------------------------------------------------|---------|
@@ -62,28 +67,28 @@ We report the leaderboard on AGIEval v1.1. The leaderboard contains two subsets 
 | Gemma 7B         | [Link](https://ai.meta.com/blog/meta-llama-3/)           | 44.9    |
 | Mistral 7B       | [Link](https://ai.meta.com/blog/meta-llama-3/)           | 44      |
 
-## AGIEval-zh few-shot
+### AGIEval-zh few-shot
 
 | Model            | Source                                                   | Average |
 |------------------|----------------------------------------------------------|---------|
 | GPT-4o           | [Link](https://github.com/ruixiangcui/AGIEval)           | 71.9    |
 | GPT-3.5-Turbo    | [Link](https://github.com/ruixiangcui/AGIEval)           | 49.5    |
 
-## AGIEval-all few-shot
+### AGIEval-all few-shot
 
 | Model            | Source                                                   | Average |
 |------------------|----------------------------------------------------------|---------|
 | GPT-4o           | [Link](https://github.com/ruixiangcui/AGIEval)           | 69.0    |
 | GPT-3.5-Turbo    | [Link](https://github.com/ruixiangcui/AGIEval)           | 47.2    |
 
-## AGIEval-en zero-shot
+### AGIEval-en zero-shot
 
 | Model            | Source                                                   | Average |
 |------------------|----------------------------------------------------------|---------|
 | GPT-4o           | [Link](https://github.com/ruixiangcui/AGIEval)           | 65.2    |
 | GPT-3.5-Turbo    | [Link](https://github.com/ruixiangcui/AGIEval)           | 54.1    |
 
-## AGIEval-zh zero-shot
+### AGIEval-zh zero-shot
 
 | Model            | Source                                                   | Average |
 |------------------|----------------------------------------------------------|---------|
@@ -91,7 +96,7 @@ We report the leaderboard on AGIEval v1.1. The leaderboard contains two subsets 
 | GPT-3.5-Turbo    | [Link](https://github.com/ruixiangcui/AGIEval)           | 45.0    |
 
 
-## AGIEval-all zero-shot
+### AGIEval-all zero-shot
 (Asterisk sign indicates results reported for AGIEval v1.0.)
 
 | Model            | Source                                                   | Average |
