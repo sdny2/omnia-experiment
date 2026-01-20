@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+
+# virtual env
+.venv/
+
+# outputs / logs
+outputs/
+logs/
+debug_payloads/
+
+# data
+data/
+
+# python cache
+__pycache__/
+*.pyc
